@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state={
       diameter:'',
       gpm:'',
+      hoseLength:''
     }
   }
 
@@ -17,24 +18,27 @@ class App extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Picker
-          selectedValue={this.state.diameter}
-          onValueChange={(value)=>this.setState({diameter:value})}>
-          <Picker.Item  label="3/4 inch" value= '1100' />
-          <Picker.Item  label="1 inch" value="150" />
-          <Picker.Item  label="1 1/4 inch" value="80" />
-          <Picker.Item  label="1 1/2 inch" value="24" />
-          <Picker.Item  label="1 3/4 inch" value="15.5" />
-          <Picker.Item  label="2 inch" value="8" />
-          <Picker.Item  label="2 1/2 inch" value="2" />
-          <Picker.Item  label="3 inch" value="0.677" />
-          <Picker.Item  label="3 1/2 inch" value="0.34" />
-          <Picker.Item  label="4 inch" value="0.2" />
-          <Picker.Item  label="4 1/2 inch" value="0.1" />
-          <Picker.Item  label="5 inch" value="0.08" />
-          <Picker.Item  label="6 inch" value="0.05" />
-        </Picker>
+      <View style={styles.app}>
+        <View>
+          <Picker
+            selectedValue={this.state.diameter}
+            onValueChange={(value)=>this.setState({diameter:value})}>
+            <Picker.Item  label="3/4 inch" value= '1100' />
+            <Picker.Item  label="1 inch" value="150" />
+            <Picker.Item  label="1 1/4 inch" value="80" />
+            <Picker.Item  label="1 1/2 inch" value="24" />
+            <Picker.Item  label="1 3/4 inch" value="15.5" />
+            <Picker.Item  label="2 inch" value="8" />
+            <Picker.Item  label="2 1/2 inch" value="2" />
+            <Picker.Item  label="3 inch" value="0.677" />
+            <Picker.Item  label="3 1/2 inch" value="0.34" />
+            <Picker.Item  label="4 inch" value="0.2" />
+            <Picker.Item  label="4 1/2 inch" value="0.1" />
+            <Picker.Item  label="5 inch" value="0.08" />
+            <Picker.Item  label="6 inch" value="0.05" />
+          </Picker>
+        </View>
+          <View style={styles.inputContainer}>
            <TextInput
             placeholder='Gallons Per Minute'
             style={styles.input}
@@ -43,6 +47,7 @@ class App extends React.Component {
             returnKeyType='done'
             value={this.state.gpm}
             />
+          </View>
          <Button
            title='debugger'
            onPress={(e)=>this.debugger(e)}
@@ -53,12 +58,14 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  app: {
     flex:1,
     // color:'black',
   },
+  inputContainer:{
+    borderWidth:1
+  },
   input:{
-    backgroundColor:'magenta',
     height:60
   },
 });
