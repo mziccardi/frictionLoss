@@ -20,6 +20,9 @@ class App extends React.Component {
     return (
       <View style={styles.app}>
         <View>
+          <Text>FRICTION LOSS</Text>
+        </View>
+        <View style ={styles.pickerContainer}>
           <Picker
             selectedValue={this.state.diameter}
             onValueChange={(value)=>this.setState({diameter:value})}>
@@ -62,10 +65,19 @@ const styles = StyleSheet.create({
     flex:1,
     // color:'black',
   },
+  title:{
+    textAlign:'center'
+  },
+  pickerContainer:{
+    backgroundColor:'lightgrey',
+    height:200,
+    marginTop:25
+  },
   inputContainer:{
     borderWidth:1
   },
   input:{
+    textAlign:'center',
     height:60
   },
 });
