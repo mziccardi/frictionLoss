@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     paddingTop:30,
     // textAlign:'center',
     alignItems:'center',
+    marginBottom:10,
     // justifyContent:'center',
   },
   pickerContainer:{
@@ -76,10 +77,12 @@ const styles = StyleSheet.create({
     // alignItems:'center',
     backgroundColor:'lightgrey',
     height:200,
+    paddingBottom:50,
     // marginTop:25
   },
   inputContainer:{
-    borderWidth:1
+    borderWidth:1,
+    marginTop:25,
   },
   input:{
     textAlign:'center',
