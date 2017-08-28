@@ -19,7 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.app}>
-        <View>
+        <View style={styles.title}>
           <Text>FRICTION LOSS</Text>
         </View>
         <View style ={styles.pickerContainer}>
@@ -62,23 +62,28 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   app: {
-    flex:1,
+    // flex:1,
     // color:'black',
   },
   title:{
-    textAlign:'center'
+    paddingTop:30,
+    // textAlign:'center',
+    alignItems:'center',
+    // justifyContent:'center',
   },
   pickerContainer:{
+    // paddingTop:15,
+    // alignItems:'center',
     backgroundColor:'lightgrey',
     height:200,
-    marginTop:25
+    // marginTop:25
   },
   inputContainer:{
     borderWidth:1
   },
   input:{
     textAlign:'center',
-    height:60
+    height:60,
   },
 });
 
