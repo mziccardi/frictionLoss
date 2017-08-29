@@ -1,4 +1,5 @@
 import React from 'react';
+import KeyboardSpacer from 'react-native-keyboard-spacer'
 import { StyleSheet, Text, View, Picker, Button, TextInput} from 'react-native';
 
 
@@ -8,7 +9,7 @@ class App extends React.Component {
     this.state={
       diameter:'',
       gpm:'',
-      hoseLength:''
+      length:''
     }
   }
 
@@ -16,6 +17,14 @@ class App extends React.Component {
     console.log(this.state.diameter)
     console.log(this.state.gpm)
   }
+
+  calculateLoss(){
+    let c = this.state.diameter
+    let q = Math.pow((this.state.gpm / 100),2)
+    let l = (this.state.length/100)
+    console.log(l)
+  }
+
   render() {
     return (
       <View style={styles.app}>
@@ -51,10 +60,21 @@ class App extends React.Component {
             value={this.state.gpm}
             />
           </View>
+          <View style={styles.inputContainer}>
+            <TextInput
+             placeholder='Length of Hose (feet)'
+             style={styles.input}
+             onChangeText={(length)=> this.setState({length})}
+             keyboardType='default'
+             returnKeyType='done'
+             value={this.state.lenght}
+             />
+          </View>
          <Button
            title='debugger'
-           onPress={(e)=>this.debugger(e)}
+           onPress={(e)=>this.calculateLoss(e)}
          />
+         <KeyboardSpacer/>
        </View>
     );
   }
@@ -82,7 +102,8 @@ const styles = StyleSheet.create({
   },
   inputContainer:{
     borderWidth:1,
-    marginTop:25,
+    borderColor:'#000000',
+    // marginTop:25,
   },
   input:{
     textAlign:'center',
